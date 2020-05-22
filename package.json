@@ -52,9 +52,16 @@
       "build/**/*",
       "node_modules/**/*"
     ],
+    "directories":{
+      "buildResources": "assets"
+    },
     "asar": true,
     "asarUnpack": [
       "build/RTDExcel/*"
-    ]
+    ],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true
+    }
   }
 }
