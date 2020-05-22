@@ -13,6 +13,7 @@
 
 !macro customInstall
   ExecWait '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe" /codebase "$INSTDIR\hello_rtd_excel.dll"'
+  ExecWait '"C:\Windows\SysWOW64\regsvr32.exe" "$INSTDIR\ExcelDna.IntelliSense64.xll"'
 !macroend
 
 !macro customInstallMode
