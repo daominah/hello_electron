@@ -59,9 +59,8 @@ class Index extends React.Component {
     }
 
     static runExcel() {
-        let pwd = electron.remote.app.getAppPath()
-            .replace("app.asar", "app.asar.unpacked");
-        let excelFile = path.resolve(pwd, "./build/RTDExcel/TestRTD0.xlsm");
+        let pwd = electron.remote.app.getAppPath();
+        let excelFile = path.resolve(pwd, "../../TestRTD0.xlsm");
         console.log("excelFile: ", excelFile);
         electron.shell.openItem(excelFile);
     }

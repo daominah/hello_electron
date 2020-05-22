@@ -40,7 +40,7 @@
   "devDependencies": {
     "@types/electron": "^1.6.10",
     "electron": "^8.2.5",
-    "electron-builder": "^22.6.0"
+    "electron-builder": "^22.6.1"
   },
   "author": "daominah",
   "description": "con cac",
@@ -52,16 +52,26 @@
       "build/**/*",
       "node_modules/**/*"
     ],
-    "directories":{
+    "directories": {
       "buildResources": "assets"
     },
-    "asar": true,
-    "asarUnpack": [
-      "build/RTDExcel/*"
+    "extraFiles": [
+      {
+        "from": "RTDExcel",
+        "to": "."
+      }
     ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "icon": "build/gopher.png"
+    },
     "nsis": {
       "oneClick": false,
-      "perMachine": true
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "include": "build/installer.nsh",
+      "artifactName": "daominah_electron_demo_Setup${version}.${ext}"
     }
   }
 }
