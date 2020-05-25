@@ -13,7 +13,7 @@ export class PriceBoardCpn extends React.Component {
         fetch("http://127.0.0.1:8002/security")
             .then((resp) => {
                 resp.json().then((body: PriceRow[]) => {
-                    console.log("fetched pussy", body);
+                    console.log("fetched securities list: ", body);
                     body.forEach((v: PriceRow) => {
                         this.state.prices[v.code] = v;
                     });
